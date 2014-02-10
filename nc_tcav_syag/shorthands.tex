@@ -1,0 +1,120 @@
+%===================================================
+% shorthand notations
+
+% e.g., i.e., et al.
+\newcommand{\eg}   {{\it e.g.,}\xspace}
+\newcommand{\ie}   {{\it i.e.,}\xspace}
+\newcommand{\etal} {{\it et al.}\xspace}
+
+% about / roughly / approximately / similar to / like
+\newcommand{\like} {\ensuremath{\sim\!}}
+
+% superscript numbers
+\newcommand{\1}    {\ensuremath{^1}\xspace}
+\newcommand{\2}    {\ensuremath{^2}\xspace}
+\newcommand{\3}    {\ensuremath{^3}\xspace}
+\newcommand{\4}    {\ensuremath{^4}\xspace}
+\newcommand{\5}    {\ensuremath{^5}\xspace}
+\newcommand{\6}    {\ensuremath{^6}\xspace}
+\newcommand{\7}    {\ensuremath{^7}\xspace}
+\newcommand{\8}    {\ensuremath{^8}\xspace}
+\newcommand{\9}    {\ensuremath{^9}\xspace}
+
+% photo-electrons
+\newcommand{\pe}   {\ensuremath{\,{\rm p.e.}}\xspace}
+
+% charge
+\newcommand{\pC}   {\ensuremath{\,{\rm pC}}\xspace}
+\newcommand{\nC}   {\ensuremath{\,{\rm nC}}\xspace}
+
+% time
+\newcommand{\pers} {\ensuremath{\,{\rm s}^{-1}}\xspace}
+\newcommand{\s}    {\ensuremath{\,{\rm s}}\xspace}
+\newcommand{\ms}   {\ensuremath{\,{\rm ms}}\xspace}
+\newcommand{\us}   {\ensuremath{\,\mu{\rm s}}\xspace}
+\newcommand{\ns}   {\ensuremath{\,{\rm ns}}\xspace}
+\newcommand{\ps}   {\ensuremath{\,{\rm ps}}\xspace}
+\newcommand{\fs}   {\ensuremath{\,{\rm fs}}\xspace}
+
+% degrees
+\newcommand{\dg}   {\ensuremath{^{\circ}}\xspace}
+
+% magnetic field
+\newcommand{\G}    {\ensuremath{\,{\rm G}}\xspace}
+\newcommand{\kG}   {\ensuremath{\,{\rm kG}}\xspace}
+\newcommand{\T}    {\ensuremath{\,{\rm T}}\xspace}
+\newcommand{\kT}   {\ensuremath{\,{\rm kT}}\xspace}
+\newcommand{\MT}   {\ensuremath{\,{\rm MT}}\xspace}
+
+% frequency
+\newcommand{\Hz}   {\ensuremath{\,{\rm Hz}}\xspace}
+\newcommand{\kHz}  {\ensuremath{\,{\rm kHz}}\xspace}
+\newcommand{\MHz}  {\ensuremath{\,{\rm MHz}}\xspace}
+\newcommand{\GHz}  {\ensuremath{\,{\rm GHz}}\xspace}
+\newcommand{\THz}  {\ensuremath{\,{\rm THz}}\xspace}
+
+% length, area, volume
+\newcommand{\nm}   {\ensuremath{\,{\rm nm}}\xspace}
+\newcommand{\um}   {\ensuremath{\,\mu{\rm m}}\xspace}
+\newcommand{\mm}   {\ensuremath{\,{\rm mm}}\xspace}
+\newcommand{\cm}   {\ensuremath{\,{\rm cm}}\xspace}
+\newcommand{\m}    {\ensuremath{\,{\rm m}}\xspace}
+\newcommand{\km}   {\ensuremath{\,{\rm km}}\xspace}
+\newcommand{\cmsq} {\ensuremath{\,{\rm cm}^2}\xspace}
+\newcommand{\cmcb} {\ensuremath{\,{\rm cm}^3}\xspace}
+\newcommand{\cc}   {\ensuremath{\,{\rm cm}^3}\xspace}
+\newcommand{\mmsq} {\ensuremath{\,{\rm mm}^2}\xspace}
+\newcommand{\mmcb} {\ensuremath{\,{\rm mm}^3}\xspace}
+
+\newcommand{\invcm}   {\ensuremath{\,{\rm cm}^{-1}}\xspace}
+\newcommand{\invcmsq} {\ensuremath{\,{\rm cm}^{-2}}\xspace}
+\newcommand{\invcmcb} {\ensuremath{\,{\rm cm}^{-3}}\xspace}
+\newcommand{\invcc}   {\ensuremath{\,{\rm cm}^{-3}}\xspace}
+
+\newcommand{\percm}  {\ensuremath{\,/{\rm cm}}\xspace}
+\newcommand{\percmsq}{\ensuremath{\,/{\rm cm}^{2}}\xspace}
+\newcommand{\percmcb}{\ensuremath{\,/{\rm cm}^{3}}\xspace}
+\newcommand{\percc}  {\ensuremath{\,/{\rm cm}^{3}}\xspace}
+\newcommand{\permm}  {\ensuremath{\,/{\rm mm}}\xspace}
+\newcommand{\permmsq}{\ensuremath{\,/{\rm mm}^{2}}\xspace}
+\newcommand{\permmcb}{\ensuremath{\,/{\rm mm}^{3}}\xspace}
+
+% energy, momentum
+\newcommand{\TeV}  {\ensuremath{\mathrm{\,Te\kern -0.1em V}}\xspace}
+\newcommand{\GeV}  {\ensuremath{\mathrm{\,Ge\kern -0.1em V}}\xspace}
+\newcommand{\MeV}  {\ensuremath{\mathrm{\,Me\kern -0.1em V}}\xspace}
+\newcommand{\keV}  {\ensuremath{\mathrm{\,ke\kern -0.1em V}}\xspace}
+\newcommand{\eV}   {\ensuremath{\mathrm{\,e\kern -0.1em V}}\xspace}
+\newcommand{\GeVc} {\ensuremath{{\mathrm{\,Ge\kern -0.1em V\!/}c}}\xspace}
+\newcommand{\MeVc} {\ensuremath{{\mathrm{\,Me\kern -0.1em V\!/}c}}\xspace}
+\newcommand{\GeVcc}{\ensuremath{{\mathrm{\,Ge\kern -0.1em V\!/}c^2}}\xspace}
+\newcommand{\MeVcc}{\ensuremath{{\mathrm{\,Me\kern -0.1em V\!/}c^2}}\xspace}
+
+% electric field
+\newcommand{\MVm}  {\ensuremath{\mathrm{\,MV\!/m}}\xspace}
+\newcommand{\GVm}  {\ensuremath{\mathrm{\,GV\!/m}}\xspace}
+
+% accelerating gradient
+\newcommand{\MeVm} {\ensuremath{\mathrm{\,Me\kern -0.1em V\!/m}}\xspace}
+\newcommand{\GeVm} {\ensuremath{\mathrm{\,Ge\kern -0.1em V\!/m}}\xspace}
+
+% power
+\newcommand{\TW}    {\ensuremath{\mathrm{\,TW}}\xspace}
+\newcommand{\MW}    {\ensuremath{\mathrm{\,MW}}\xspace}
+\newcommand{\kW}    {\ensuremath{\mathrm{\,kW}}\xspace}
+\newcommand{\W}     {\ensuremath{\mathrm{\,W}}\xspace}
+\newcommand{\mW}    {\ensuremath{\mathrm{\,mW}}\xspace}
+
+% current
+\newcommand{\kA}    {\ensuremath{\mathrm{\,kA}}\xspace}
+\newcommand{\A}     {\ensuremath{\mathrm{\,A}}\xspace}
+\newcommand{\mA}    {\ensuremath{\mathrm{\,mA}}\xspace}
+
+% particles
+\newcommand{\g}    {\ensuremath{\gamma}\xspace}
+\newcommand{\p}    {\ensuremath{p}\xspace}
+\newcommand{\n}    {\ensuremath{n}\xspace}
+\newcommand{\el}   {\ensuremath{\mathrm{e}}}
+\newcommand{\elp}  {\ensuremath{\el^+}\xspace}
+\newcommand{\elm}  {\ensuremath{\el^-}\xspace}
+\newcommand{\elpm} {\ensuremath{\el^{\pm}}\xspace}

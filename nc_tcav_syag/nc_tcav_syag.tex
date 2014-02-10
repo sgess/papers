@@ -1,0 +1,37 @@
+%----------------------------------------------------------------
+% declare the document class
+
+% for official submission
+%\documentclass[aps,prl,twocolumn,showpacs,superscriptaddress,psfig]{revtex4}
+
+% for preprint
+\documentclass[aps,prl,twocolumn,showpacs,preprintnumbers,superscriptaddress,psfig]{revtex4}
+
+%***************************************************
+% preamble
+\include{preamble}
+
+%***************************************************
+% begin document
+\begin{document}
+
+%====================================
+% header
+\input{header}
+
+%====================================
+% body
+\input{body}
+
+%====================================
+% acknowledgments
+\input{acknowledgments}
+
+%====================================
+% bibliography
+\bibliographystyle{asskickular}
+\bibliography{bibliography}
+
+%***************************************************
+% end the document
+\end{document}

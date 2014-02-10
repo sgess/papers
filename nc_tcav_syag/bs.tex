@@ -1,0 +1,105 @@
+The chicane is symmetric about its center, with critical devices and diagnostics located at points where the ratio $\eta \delta / \sqrt{ \beta \varepsilon}$ is maximized.
+%The longitudinal phase space evolves non-linearly as the beam is accelerated, chirped, and compressed, so that the final projected longitudinal emittance is much greater than $\varepsilon_{z0}$. $\varepsilon_{z0}$ remains an important quantity however, because it limits both the minimum achievable bunch length and 
+
+% W-chicane, final focus, and notch collimator
+Within the final 100\m of the FACET beamline there are several
+critical tools and diagnostics that were used to generate and measure
+our two-bunch beam structure. To create two bunches temporally
+separated by only ${\like 500\fs}$, a chirped beam is sent from the
+linac into the final chicane, wherein it is dispersed horizontally and
+a notch is taken from its center with an adjustable tantalum
+finger. Jaw collimators were used in addition to remove the far
+extremeties of the beam, where the low and high energy tails sampled
+too wide an expanse in $z$. Figure~\ref{fig:notch_col} shows a
+simulation demonstrating the use of the custom collimators at
+FACET. The remaining beam is then over-compressed by the end of the
+chicane, and the notch in energy has become a notch in $z$. In
+experiment it was found that about half of the initial beam had to be
+collimated away to generate the cleanest two-bunch structure, leaving
+${8.9 \pm XX \times 10^{10}}$ of the original ${2.2 \pm XX \times
+10^{10}}$ electrons, as determined by simulations and current meters
+along the beamline.
+
+% sYAG
+A wiggler spectrometer is located a point of equal dispersion compared
+to the notch collimator according to the bilateral symmetry of the
+chicane along the beam path. This device measures the dispersed charge
+profile of the electron beam via the intensity pattern of X-rays
+produced by the wiggling motion of the electron beam as observed on a
+scintillating YAG crystal. This provides a direct measurement of the
+transverse--and thus the spectral profile of the electron beam before
+it reaches the plasma source. The wiggler spectrometer is a single
+shot diagnostic, which allowed the experimenters to adjust and improve
+the notched profile of the beam in live time. The longitudinally
+correlated energy spread of the beam prior to notching was measured by
+the wiggler spectrometer to be ${XX \pm \%}$. The energy spread of the
+drive and witness bunches was measured to be ${XX \pm \%}$ and
+${XX \pm \%}$, respectively. The resolution of the measurement is
+determined by the point spread function of the YAG crystal, and the
+CCD camera imaging setup. Figure~\ref{fig:sYAG} shows a typical
+notched beam spectrum measured by the wiggler spectrometer from the
+data.
+
+% TCAV
+A transverse deflecting waveguide structure occupies a location in the
+chicane near the wiggler spectrometer and allows the experimenters to
+measure the longitudial profile of the beam directly by streaking the
+beam itself onto a scintillating YAG crystal or an optical transition
+radiation (OTR) monitor screen at a location near the plasma
+source. The streaking process precludes the beam from having an
+optimal profile for PWFA, however, so this method of measuring the
+longitudinal profile is limited to statistical studies of the beam
+used in the experiment. The average longitudinal profile was estimated
+by fitting two asymmetric gaussian distributions to a sample of 100
+shots and taking the average of the fit parameters. The final numbers
+for the two-bunch beam are listed in
+Table~\ref{tab:two-bunch_beam}. The resolution of the measurement is
+determined by the electron beam dynamics that govern the streaking of
+the beam from the deflecting structure to the OTR screen, and the
+point spread function of the YAG crystal, and the optical resolution
+of the CCD camera imaging setup. Figure~\ref{fig:long_prof} shows a
+typical notched longitudinal profile taken from the data using a YAG
+crystal screen.
+
+% Table: Experimental Parameters
+\begin{table}[h]
+\begin{tabular}{|c|c|c|c|c|}
+  \hline
+  \multicolumn{5}{|c|}{Drive Beam} \\
+  \hline
+  $Q$ (\pC) & $\sigma_{z,L}$ (\um) & $\sigma_{z,R}$ (\um) & $\sigma_r$ (\um) & $\mu_z$ (\um)\\
+  \hline
+  350       & 13                  & 27                   & 30               & 0   \\
+  \hline
+  \multicolumn{5}{c}{}\\
+  \hline
+  \multicolumn{5}{|c|}{Witness Beam} \\
+  \hline
+  $Q$ (\pC) & $\sigma_{z,L}$ (\um) & $\sigma_{z,R}$ (\um) & $\sigma_r$ (\um) & $\mu_z$ (\um) \\
+  \hline
+  580       & 42                  & 57                   & 30               & 126 \\
+  \hline
+\end{tabular}
+\caption{
+Experimental beam parameters for two-bunch FACET E200 PWFA experiment.
+}
+\label{tab:two-bunch_beam}
+\end{table}
+
+% two-bunch profile
+For the data analyzed in this report, the drive bunch had a peak
+current of approximately 2.1\kA, which corresponds to an expected
+maximum plasma blowout radius of 76\um and a length of 150\um in the
+preformed lithium plasma with density ${5.0 \times
+10^{16}\invcc}$. The peak-to-peak distance between the drive and
+witness bunch was 126\um, which put the core of the witness beam near
+the peak of the accelerating field within the plasma wake. Because the
+longitudinal extent of the witness beam was about 50\um rms, a
+significant portion of the beam was located behind the rear edge of
+the bubble in a region that is strongly
+defocusing. Figure~\ref{fig:two-bunch_sim} shows a cutaway of the beam
+and plasma density at a point midway through the plasma source from a
+simulation run in QuickPIC~\ref{QuickPIC}. The loaded longitudinal
+field profile on axis as determined by the simulation is superimposed
+on the denstiy profiles and illustrates the loading of the wake from
+the witness bunch used in the experiment.
