@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  14 FEB 2014 03:51
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  16 FEB 2014 02:12
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -454,53 +454,62 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 182.
 (/usr/local/texlive/2010/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-<figures/facet_schem.pdf, id=45, 722.7pt x 542.025pt>
+<figures/facet_schem.pdf, id=49, 722.7pt x 542.025pt>
 File: figures/facet_schem.pdf Graphic file (type pdf)
 
 <use figures/facet_schem.pdf> [1{/usr/local/texlive/2010/texmf-var/fonts/map/pd
-ftex/updmap/pdftex.map}] <figures/combo.pdf, id=64, 561.09625pt x 421.575pt>
+ftex/updmap/pdftex.map}] <figures/combo.pdf, id=68, 561.09625pt x 421.575pt>
 File: figures/combo.pdf Graphic file (type pdf)
 
 <use figures/combo.pdf> [2 <./figures/facet_schem.pdf>]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 224.
+ on input line 232.
 
-<figures/stag.pdf, id=128, 419.5675pt x 298.11375pt>
+<figures/stag.pdf, id=134, 419.5675pt x 298.11375pt>
 File: figures/stag.pdf Graphic file (type pdf)
  <use figures/stag.pdf>
 [3 <./figures/combo.pdf> <./figures/stag.pdf>]
-<figures/slit_wlabel.pdf, id=179, 562.1pt x 421.575pt>
+<figures/slit_wlabel.pdf, id=185, 562.1pt x 421.575pt>
 File: figures/slit_wlabel.pdf Graphic file (type pdf)
 
 <use figures/slit_wlabel.pdf>
-<figures/tcav_slit2.pdf, id=180, 562.1pt x 421.575pt>
+<figures/tcav_slit2.pdf, id=186, 562.1pt x 421.575pt>
 File: figures/tcav_slit2.pdf Graphic file (type pdf)
 
 <use figures/tcav_slit2.pdf>
-<figures/raw.pdf, id=182, 561.09625pt x 421.575pt>
+<figures/raw.pdf, id=188, 561.09625pt x 421.575pt>
 File: figures/raw.pdf Graphic file (type pdf)
  <use figures/raw.pdf>
-<figures/test.pdf, id=183, 490.83376pt x 408.52625pt>
+<figures/test.pdf, id=189, 490.83376pt x 408.52625pt>
 File: figures/test.pdf Graphic file (type pdf)
  <use figures/test.pdf>
+[4 <./figures/slit_wlabel.pdf> <./figures/tcav_slit2.pdf>]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
+ on input line 337.
+
 No file LPSTOMO_PRstab.bbl.
-[4 <./figures/slit_wlabel.pdf> <./figures/tcav_slit2.pdf> <./figures/raw.pdf>]
-[5 <./figures/test.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 332.
+[5 <./figures/raw.pdf> <./figures/test.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 346.
  (./LPSTOMO_PRstab.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 332.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 346.
 Package rerunfilecheck Info: File `LPSTOMO_PRstab.out' has not changed.
-(rerunfilecheck)             Checksum: F35FD1CAB3889666D5A8F2E4296F8D79;739.
+(rerunfilecheck)             Checksum: 09EA31B9A7518C284FBE96CC1725A9D3;838.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
+
+
  ) 
 Here is how much of TeX's memory you used:
- 7593 strings out of 493747
- 107694 string characters out of 3143546
- 207467 words of memory out of 3000000
- 10732 multiletter control sequences out of 15000+200000
+ 7599 strings out of 493747
+ 107752 string characters out of 3143546
+ 207546 words of memory out of 3000000
+ 10736 multiletter control sequences out of 15000+200000
  9699 words of font info for 38 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 41i,9n,28p,1165b,445s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,9n,28p,1165b,387s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><
 /usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
@@ -516,10 +525,10 @@ ve/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/
 010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/201
 0/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2010/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on LPSTOMO_PRstab.pdf (5 pages, 3812144 bytes).
+Output written on LPSTOMO_PRstab.pdf (5 pages, 3815061 bytes).
 PDF statistics:
- 3143 PDF objects out of 3580 (max. 8388607)
- 256 compressed objects within 3 object streams
- 28 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3150 PDF objects out of 3580 (max. 8388607)
+ 263 compressed objects within 3 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
