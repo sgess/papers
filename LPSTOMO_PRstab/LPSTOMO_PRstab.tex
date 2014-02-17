@@ -215,7 +215,7 @@ $z = ct-s$ is the co-moving beam coordinate with the head of the beam at $z < 0$
 
 The equilibrium energy spread was measured to be $\sigma_{\delta} = 8.11 \times 10^{-4}$. There is no time-energy correlation in the beam after it has been damped, so the longitudinal phase space volume out of the ring is $\varepsilon_{NDR} = 5.57$ MeV$\cdot$mm. $\varepsilon_{NDR}$ sets a lower limit on the final bunch length that can be achieved at the end of the linac.
 
-\subsection{Chirping and Compression in the First Half of the Linac}
+\subsection{Acceleration, Chirping, and Compression in the First Half of the Linac}
 
 %Upon extraction from the NDR, the beam is accelerated by RF cavities in the FACET linac. The energy gain of a particle in an RF cavity is given by
 The FACET linac uses more than 500 constant gradient RF cavities to accelerate the beam to its final energy. The energy gain of a particle in an RF cavity is given by
@@ -228,19 +228,25 @@ C_{RF} = \sigma_z \left. \frac{dW_{RF}}{dz} \right|_{z=0} = -\sigma_z e E L k \s
 \end{equation}
 The chirp is positive if the energy of the beam particles increases with $z$. This is a useful definition of chirp because it can be applied to both RF phase chirping and the longitudinal wakefield chirping described in Section~\ref{wakes}.
 
-The first RF cavity encountered by the electron beam after extraction from the NDR is the s-band compressor in the North Ring to Linac (NRTL) chicane. The compressor cavity is operated at the $90^o$ zero-crossing so that the beam is maximally chirped. 
+Immediately after extraction from the NDR, the electron beam passes through the s-band compressor cavity in the North Ring to Linac (NRTL) chicane. The compressor cavity applies a negative, linear chirp to the beam. As the bunch travels through the chicane, particles with different energies take different paths. Maximal bunch compression occurs when the change in path length of the highest and lowest energy particles is equal to the initial $\sigma_z$. The transfer matrix element $R_{56} = \Delta z/\Delta E$ defines the degree of compression in the chicane.
 
-The beam is compressed by a factor of 10 in the North Ring to Linac (NRTL) chicane and enters the Linac with a 600 $\mu$m RMS bunch length. The bunch is slightly over-compressed, with a residual low-to-high chirp, so as to minimize the impact of wakefields in the linac. The bunch is accelerated in the first kilometer of the linac with a net phase of -20 degrees with respect to the crest (in SLAC coordinates, negative angles are ahead of crest). FACET uses a unique chirping scheme in the front end of the linac that staggers the phasing of the beam over nine linac sectors. The staggered chirp process is depicted in Figure~\ref{stag}. By accelerating on crest or nearly on crest in the first few sectors, the beam becomes stiff and more resistant to emittance dilution from transverse wakefields. The later sectors have stronger phasing, up to -55 degrees off crest, in order to achieve an average of -20 degrees chirp prior to the Sector 10 Chicane. While this scheme has the advantage of reducing emittance growth, it makes the beam more sensitive to phase errors in the highly chirped sectors.
+The bunch is slightly over-compressed in the NRTL and exits the chicane with a residual positive chirp. Over-compression reduces beam tails, reduces the strength of wakefields, and matches the $z-\delta$ correlation of the beam to the RF chirp applied to the beam in Sectors 2-10. The bunch length is roughly 1.2 mm when the beam is captured in the s-band linac.
+
+%The beam is compressed by a factor of 10 in the North Ring to Linac (NRTL) chicane and enters the Linac with a 600 $\mu$m RMS bunch length. The bunch is slightly over-compressed, with a residual low-to-high chirp, so as to minimize the impact of wakefields in the linac. 
+
+The bunch is accelerated in the first kilometer of the linac with a net phase of about -20 degrees. FACET uses a unique chirping scheme in the front end of the linac that staggers the RF chirp phase of over five linac sectors. The staggered chirp process is depicted in Figure~\ref{stag}. By accelerating on crest or nearly on crest in the first few sectors, the beam becomes stiff and is resistant to emittance dilution from transverse wakefields. The later sectors have stronger phasing, up to -55 degrees off crest, in order to achieve an average of -20 degrees chirp prior to the Sector 10 Chicane. While this scheme has the advantage of reducing emittance growth, it makes the beam more sensitive to phase errors in the highly chirped sectors.
 
 \begin{figure}[hb]
-  \includegraphics[width=\columnwidth]{figures/stag.pdf}
-  \caption{Diagram showing the phasing in sectors 2-10 at FACET. Each arrow represents the phase and amplitude of the accelerating sector. Note that the chirping angle is depicted as a positive value for clarity.}
+  \includegraphics[width=\columnwidth]{figures/chirp_plot.pdf}
+  \caption{Diagram showing the phasing in sectors 2-10 at FACET. Each arrow represents the phase and amplitude of the accelerating sector. Sectors 7 and 8 are not operational.}
   \label{stag}
 \end{figure}
 
-The bunch is compressed by another factor of 10 in the Sector 10 Chicane. 
+The bunch length is compressed from 1.2 mm to less than 100 $\mu$m in the Sector 10 chicane. The bunch is slightly over-compressed, with residual negative chirp.
 
 \subsection{Wakefield Chirping and Compression in the W-Chicane}\label{wakes}
+
+The high-charge electron bunch is extremely short compared to the RF wavelength after compression in the Sector 10. The bunch length is less than 0.5 s-band degrees, so it is impractical to use the RF to chirp the beam. On the other hand, the peak current for the electron bunch is over 4 kA and drives a large amplitude, longitudinal wakefield in the RF cavities. The wakefield is mostly linear over the length of the short bunch
 
 Again, the bunch is over-compressed, this time with a residual high-to-low chirp. The very short (50 $\mu$m), very high charge (3.2 nC) bunch drives a high-amplitude longitudinal wakefield in the SLAC s-band cavities. The wakeloss function $W(z)$ is a convolution of the cavity wake structure and the bunch profile, but for very short bunches it is roughly linear over the core of the bunch. The net effect of the wakefields in the second kilometer of the linac is to provide a mostly linear high-to-low chirp that will be leveraged for bunch compression in the FACET W-Chicane.
 
