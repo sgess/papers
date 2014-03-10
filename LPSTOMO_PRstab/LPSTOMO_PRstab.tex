@@ -105,12 +105,14 @@ prstab,
 % other information
 % \affiliation can be followed by \email, \homepage, \thanks as well.
 %\author{Spencer~Gessner}
-\author{S.~Gessner}
+\author{S.J.~Gessner}
 \AFFslac
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % All Other Authors (alphabetical)
 \author{E.~Adli}
+\AFFslac
+\author{J.M.~Allen}
 \AFFslac
 \author{C.I.~Clarke}
 \AFFslac
@@ -153,7 +155,7 @@ prstab,
 \date{\today}
 
 \begin{abstract}
-The Facility for Advanced Accelerator Experimental Tests (FACET) at SLAC produces high energy electron beams for Plasma Wakefield Acceleration (PWFA). PWFA experiments require high charge, high peak-current bunches in order to drive large amplitude wakes in the plasma. Creating short bunches with high charge requires detailed knowledge and control of the longitudinal phase space as it evolves in the linac. In this paper, we provide an overview of the bunch compression scheme at FACET and describe a novel tomographic method that allows us reconstruct the beam's longitudinal phase space at the end of the linac.
+The Facility for Advanced Accelerator Experimental Tests (FACET) at SLAC provides high energy electron beams for Plasma Wakefield Acceleration (PWFA) research. PWFA experiments require high peak-current bunches in order to drive large amplitude wakes in a plasma. Creating short bunches with high charge requires a detailed understanding and control of the beam's longitudinal phase space as it evolves in the linac. In this paper, we provide an overview of the bunch compression scheme at FACET and describe a novel tomographic method that allows us to reconstruct the beam's longitudinal phase space at the end of the linac.
 \end{abstract}
 
 % insert suggested PACS numbers in braces on next line
@@ -173,35 +175,47 @@ The Facility for Advanced Accelerator Experimental Tests (FACET) at SLAC produce
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
-The Facility for Advanced Accelerator Experimental Tests (FACET) at SLAC produces high energy electron beams for Plasma Wakefield Acceleration (PWFA)~\cite{mjh_facet}. PWFA experiments require high charge, high peak-current bunches in order to drive large amplitude wakes in the plasma. Creating short bunches with high charge requires detailed knowledge and control of the longitudinal phase space as it evolves in the linac. In this paper, we provide a detailed description of the bunch compression scheme at FACET and describe a novel diagnostic for reconstructing the longitudinal phase space at the end of the linac.
+The Facility for Advanced Accelerator Experimental Tests (FACET) is designed to produce extremely high peak-current bunches for research on Plasma Wakefield Acceleration (PWFA) and other high-gradient acceleration methods~\cite{mjh_facet}. Producing a high-peak current bunch requires careful manipulation of the longitudinal phase space, so that the maximum amount of charge is packed into the shortest possible length. This process, called bunch compression, has two steps. First, an energy correlation, or chirp, is applied to the beam by an RF cavity. Second, the beam travels through a magnetic chicane where particles of different energies take different paths. A chicane is characterized by the matrix parameter $R_{56}$, which relates the change in path length of an off-energy particle relative to the on-energy trajectory. We attempt to minimize the bunch length $\sigma$ by tuning $R_{56}$ and $\delta$, the energy spread due to the chirp, such that $\sigma_f = \sigma-R_{56}\delta = 0$. Figure~\ref{bc} illustrates this balancing act.
 
-FACET combines RF and wakefield chirping mechanisms with bunch compressor chicanes to generate the shortest bunches possible.
+\begin{figure}[htb]
+\includegraphics[width=\columnwidth]{figures/bc.pdf}
+  \caption{The beam is compressed by correlating the longitudinal phase space with an RF cavity and rotating the phase space in a chicane.}
+  \label{bc}
+\end{figure}
 
-The 2D longitudinal particle tracking code LiTrack is used to supplement our understanding of the phase space in regions of the linac where diagnostics are not available.
+In practice, we cannot reduce the bunch to zero length. The minimum bunch length is determined by the conservation of longitudinal phase space
+\begin{equation}\label{cons}
+ \sigma_{z_{min}} = \frac{\varepsilon_0}{\delta_f E_f}
+\end{equation}
+where $\varepsilon_0 = \sigma_0\delta_0 E_0$ is the initial longitudinal phase space volume. We can minimize the bunch length by maximizing the beam energy and energy spread. The beam is accelerated to a final energy of 20.35 GeV at FACET, which makes it the highest energy electron beam currently produced on Earth. The largest acceptable energy spread is about 1.7\% rms and is set by the momentum apertures of the chicanes and final focus system at FACET.
 
-The final bunch length is sensitive to many parameters in the linac, including initial bunch length, RF chirp phase, and the $R_{56}$ of compressor chicanes. To the greatest extent possible, feedbacks are implemented to control and stabilize the beam as it evolves in the linac. Some parameters are not under feedback control, and for this reason it is critical to have real time diagnostics for the bunch length, energy spectrum, and longitudinal phase space.
+The bunch compression scheme used at FACET was first developed for the SPPS research program at the FFTB~\cite{pe_spps}. FACET uses a system of three bunch compressors to reduce the bunch length from an initial value greater than 6 mm to a final bunch length as small as 20 $\mu$m. Final compression at FACET is achieved in the W-chicane. The $R_{56}$ of the W-chicane can be tuned from 0 to 10 mm to produce different longitudinal bunch profiles. In this paper, we study the chicane in the 10 mm configuration, which is used to produce double-gaussian profiles for PWFA experiments.
 
-FACET uses an x-band transverse deflecting cavity (TCAV) for precision bunch length measurements and a half-period wiggler magnet for non-destructive energy spectrum measurements. These two diagnostics provide projections of the longitudinal phase space. A third measurement was developed by creating a tunable momentum aperture, or slit, and using the TCAV and spectrometer to diagnose mono-energetic slices of the beam. By combining the bunch profiles measured for each slice, we were able to tomographically reconstruct the beam's longitudinal phase space. The longitudinal phase space uniquely encodes the longitudinal evolution of the beam in the linac. This technique allows us to determine errors in linac parameters and is a valuable tool for beam tuning.
+The final bunch profile is sensitive to many parameters in the linac, including initial bunch length, RF chirp phase, and the $R_{56}$ of compressor chicanes. To the greatest extent possible, feedbacks are implemented to control and stabilize the beam as it evolves in the linac. Some parameters are not under feedback control, and for this reason it is critical to have real time diagnostics for the bunch length, energy spectrum, and longitudinal phase space.
+
+FACET uses an x-band transverse deflecting cavity (TCAV) for precision bunch length measurements with temporal resolution better than 50 fs and a half-period wiggler magnet for non-destructive energy spectrum measurements. These two diagnostics measure projections of the longitudinal phase space. A third measurement was developed by creating a tunable momentum aperture, or slit, and using the TCAV and spectrometer to diagnose mono-energetic slices of the beam. By combining the bunch profiles measured for each slice, we are able to tomographically reconstruct the beam's longitudinal phase space. The tomographic phase space diagnostic is a valuable tool for optimizing double-gaussian beam structures and understanding the results of PWFA experiments.
+
+Throughout the paper, we reference simulations of the longitudinal phase space performed with the 2D particle tracking code LiTrack~\cite{litrack}.
 
 \begin{figure*}[htb]
 \includegraphics[width=\textwidth,height=12cm]{figures/facet_schem.pdf}
-  \caption{Overview of the FACET Linac.}
+  \caption{Top: Overview of the FACET linac. Beamline elements that determine the longitudinal phase space are labeled. TCAV diagnostic and wiggler spectrometer (not shown) are located in the final leg of the W-chicane. Center: The beam phase space as simulated by LiTrack for the linac regions labeled A-G. The beam travels to the left in these plots. Bottom: The longitudinal projections (bunch profile) of the phase spaces above. G1 is the projection for the maximally compressed beam using W-chicane $R_{56} = 5$ mm. G2 shows the projection with $R_{56} = 10$ mm used for two-bunch beam profiles.}
   \label{schem}
 \end{figure*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%The longitudinal bunch parameters prior to injection in the NDR are approximately $\sigma_z = 2.33$ mm and $\delta = 1$\% which gives a longitudinal phase space volume of $\varepsilon_{0} = \sigma_z \sigma_{\delta} = 27.73$ MeV$\cdot$mm. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Longitudinal Phase Space Evolution}\label{sec:facet}
+\section{Longitudinal Phase Space Evolution in the FACET Linac}\label{sec:facet}
 
-The FACET linac is 2 kilometers long and accelerates a 3.2 nC electron beam to 20.35 GeV. The beam is generated from a thermionic cathode at the west end of the linac and captured by the Sector 0 RF cavities. It is accelerated to 1.19 GeV in the Sector 1 s-band cavities and is transferred to the North Damping Ring (NDR) via the North Linac to Ring chicane (NLTR). The beam is transversely and longitudinally damped in the NDR before it is extracted into the North Ring to Linac chicane (NRTL). The NRTL is the first of three bunch compressor chicanes at FACET. The beam is accelerated to 9 GeV and chirped by the RF in the first kilometer of the linac (Sectors 2-10) before being compressed again in the Sector 10 chicane. Following the Sector 10 chicane, the beam is accelerated on crest to 20.35 GeV in the second kilometer of the linac (Sectors 11-19). Beam induced wakefields provide a chirp in this portion of the beamline before the bunch undergoes final compression in the FACET W-chicane. Figure~\ref{schem} shows the beamline elements that effect the longitudinal evolution of the beam.
+The FACET linac is 2 kilometers long and accelerates a 3.2 nC electron beam to a final energy of 20.35 GeV. The beam is generated from a thermionic cathode at the west end of the linac and captured by the Sector 0 RF cavities. It is accelerated to 1.19 GeV in the Sector 1 s-band cavities and is transferred to the North Damping Ring (NDR) via the North Linac to Ring chicane (NLTR). The beam is transversely and longitudinally damped in the NDR before it is extracted into the North Ring to Linac chicane (NRTL). The NRTL is the first of three bunch compressor chicanes at FACET. The beam is accelerated to 9 GeV and chirped by the RF in the first kilometer of the linac (Sectors 2-10) before being compressed again in the Sector 10 chicane. Following the Sector 10 chicane, the beam is accelerated on crest to 20.35 GeV in the second kilometer of the linac (Sectors 11-19). Beam induced wakefields provide a chirp in this portion of the beamline before the bunch undergoes final compression in the FACET W-chicane. Figure~\ref{schem} shows the beamline elements that effect the longitudinal evolution of the beam.
 
 \subsection{North Damping Ring}\label{NDR}
 
-The longitudinal bunch parameters prior to injection in the NDR are approximately $\sigma_z = 2.33$ mm and $\delta = 1$\% which gives a longitudinal phase space volume of $\varepsilon_{0} = \sigma_z \sigma_{\delta} = 27.73$ MeV$\cdot$mm. Once the beam is in the ring, the bunch is radiatively damped to an equilibrium bunch length and an equilibrium energy spread. The bunch is stored in the ring for 16.7 ms and the longitudinal damping time $\tau_z = 1.79$ ms. 
+The electron beam is radiatively damped to an equilibrium bunch length and an equilibrium energy spread in the NDR. The bunch is stored in the ring for 16.7 ms and the longitudinal damping time $\tau_z = 1.79$ ms. The bunch parameters out of the NDR are the initial conditions for longitudinal phase space evolution in the linac.
 
-Another benefit the radiation damping mechanism is that it provides a useful bunch length diagnostic early in the machine. We imaged synchrotron radiation generated by the beam in one of the bends with a Hamamatsu C5680 streak camera. The camera was operated in ``synchroscan" mode, so that the bunch profile can be measured for multiple passes of the beam during the store. Figure~\ref{streak} shows the streaked beam image for the final fives turns before extraction.  The bunch is fit to an asymmetric gaussian with the form
+The radiation damping mechanism leads to a useful diagnostic for determining the initial bunch profile before the beam enters the linac. We imaged synchrotron radiation generated by the beam in one of the bends of the ring with a Hamamatsu C5680 streak camera. The camera was operated in ``synchroscan" mode, so that the bunch profile can be measured for multiple passes of the beam during the store. Figure~\ref{streak} shows the streaked beam image for the final fives turns before extraction.  The bunch is fit to an asymmetric gaussian with the form
 \begin{equation}
  \lambda(z) = \frac{N_b}{\sqrt{2\pi}\sigma_z}\exp{ \left[-\frac{1}{2}\left(\frac{z}{(1\pm A)\sigma_z}\right)^2\right]}.
 \end{equation}
@@ -213,28 +227,41 @@ $z = ct-s$ is the co-moving beam coordinate with the head of the beam at $z < 0$
   \label{streak}
 \end{figure}
 
-The equilibrium energy spread was measured to be $\sigma_{\delta} = 8.11 \times 10^{-4}$. There is no time-energy correlation in the beam after it has been damped, so the longitudinal phase space volume out of the ring is $\varepsilon_{NDR} = 5.57$ MeV$\cdot$mm. $\varepsilon_{NDR}$ sets a lower limit on the final bunch length that can be achieved at the end of the linac.
+The energy spread out of the damping ring has previously been measured to be $\delta = 8.3 \times 10^{-4}$~\cite{holtz_ring}. The longitudinal phase space volume out of the ring is $\varepsilon_{NDR} = 5.7$ MeV$\cdot$mm. $\varepsilon_{NDR}$ sets a lower limit on the final bunch length that can be achieved at the end of the linac.
 
-\subsection{Acceleration, Chirping, and Compression in the First Half of the Linac}
+\subsection{Chirping and Compression in the First Half of the Linac}\label{first}
 
+The correlation in the $z-\delta$ phase space, or chirp, is defined as
+\begin{equation}
+C_{z\delta} = \int (z-<z>)(\delta - <\delta>)\rho(z,\delta)dzd\delta
+\end{equation}
+where $\rho(z,\delta)$ is the normalized longitudinal phase space density. The chirp is positive if the beam energy increases from head to tail and negative if the beam energy decreases from head to tail. 
+
+The beam has zero chirp when it exits the NDR. Upon extraction from the ring, the beam passes through the s-band compressor cavity in the NRTL. Particles in the beam experience energy gain or loss according to
+\begin{equation}
+U_{RF}(z) = e E L \cos(kz + \phi)
+\end{equation}
+for cavity field strength $E$, cavity length $L$, RF wavenumber $k$, and cavity phase $\phi$. Cavity phase is defined such that $0^o$ is on crest and negative phases are ahead of crest, consistent with the definition of $z$ given in Section~\ref{NDR}. We can also define the chirp applied to the bunch by a beamline element as the change in energy of a particle at a position one $\sigma$ from the center of the bunch, multiplied by the distance from the center of the bunch
+\begin{equation}
+C_{RF} = \sigma \frac{U_{RF}(\sigma) - U_{RF}(-\sigma)}{2}.
+\end{equation}
+The emittance and the chirp are both measured in MeV$\cdot$mm. This definition of beamline chirp is useful because it can also be used to describe the chirp induced by wakefields in Section~\ref{wakes}.
+
+The beam traverses the compressor cavity at the zero crossing ($\phi = 90^o$), which imposes a negative, linear chirp on the beam. The bunch is slightly over-compressed in the NRTL and exits the chicane with a residual positive chirp. Over-compression reduces beam tails, reduces the strength of wakefields, and creates a phase space with the same sign chirp as the RF chirp applied to the beam in Sectors 2-10~\cite{fj_over}. The bunch length is roughly 1.2 mm when the beam is captured in the s-band linac.
 %Upon extraction from the NDR, the beam is accelerated by RF cavities in the FACET linac. The energy gain of a particle in an RF cavity is given by
-The FACET linac uses more than 500 constant gradient RF cavities to accelerate the beam to its final energy. The energy gain of a particle in an RF cavity is given by
-\begin{equation}
-W_{RF}(z) = e E L \cos(kz + \phi)
-\end{equation}
-for cavity field strength $E$, cavity length $L$, RF wavenumber $k$, and cavity phase $\phi$. Cavity phase is defined such that $0^o$ is on crest and negative phases are ahead of crest, consistent with the definition of $z$ given in Section~\ref{NDR}. The accelerating sections can also be used to chirp the beam. We define the chirp from an accelerating section as the derivative of the energy gain evaluated at the center of the bunch, multiplied by the length of the bunch
-\begin{equation}
-C_{RF} = \sigma_z \left. \frac{dW_{RF}}{dz} \right|_{z=0} = -\sigma_z e E L k \sin{\phi}.
-\end{equation}
-The chirp is positive if the energy of the beam particles increases with $z$. This is a useful definition of chirp because it can be applied to both RF phase chirping and the longitudinal wakefield chirping described in Section~\ref{wakes}.
+%The FACET linac uses more than 500 constant gradient RF cavities to accelerate the beam to its final energy. The energy gain of a particle at position $z$ in the bunch in an RF cavity is given by
+%\begin{equation}
+%\Delta E_{RF}(z) = e \mathcal{E} L \cos(kz + \phi)
+%\end{equation}
+%for cavity field strength $\mathcal{E}$, cavity length $L$, RF wavenumber $k$, and cavity phase $\phi$. Cavity phase is defined such that $0^o$ is on crest and negative phases are ahead of crest, consistent with the definition of $z$ given in Section~\ref{NDR}. The accelerating sections can also be used to chirp the beam. We define the chirp from an accelerating section as the derivative of the energy gain evaluated at the center of the bunch, multiplied by the length of the bunch
+%\begin{equation}
+%C_{RF} = \sigma_z \left. \frac{d\Delta E_{RF}}{dz} \right|_{z=0} = -\sigma_z e \mathcal{E} L k \sin{\phi}.
+%\end{equation}
+%The chirp is positive if the energy of the beam particles increases with $z$. This is a useful definition of chirp because it can be applied to both RF phase chirping and the longitudinal wakefield chirping described in Section~\ref{wakes}.
 
-Immediately after extraction from the NDR, the electron beam passes through the s-band compressor cavity in the North Ring to Linac (NRTL) chicane. The compressor cavity applies a negative, linear chirp to the beam. As the bunch travels through the chicane, particles with different energies take different paths. Maximal bunch compression occurs when the change in path length of the highest and lowest energy particles is equal to the initial $\sigma_z$. The transfer matrix element $R_{56} = \Delta z/\Delta E$ defines the degree of compression in the chicane.
-
-The bunch is slightly over-compressed in the NRTL and exits the chicane with a residual positive chirp. Over-compression reduces beam tails, reduces the strength of wakefields, and matches the $z-\delta$ correlation of the beam to the RF chirp applied to the beam in Sectors 2-10. The bunch length is roughly 1.2 mm when the beam is captured in the s-band linac.
+%Immediately after extraction from the NDR, the electron beam passes through the s-band compressor cavity in the North Ring to Linac (NRTL) chicane. The compressor cavity applies a negative, linear chirp to the beam. The bunch is slightly over-compressed in the NRTL and exits the chicane with a residual positive chirp. Over-compression reduces beam tails, reduces the strength of wakefields, and creates a phase space with the same sign chirp as the RF chirp applied to the beam in Sectors 2-10. The bunch length is roughly 1.2 mm when the beam is captured in the s-band linac.
 
 %The beam is compressed by a factor of 10 in the North Ring to Linac (NRTL) chicane and enters the Linac with a 600 $\mu$m RMS bunch length. The bunch is slightly over-compressed, with a residual low-to-high chirp, so as to minimize the impact of wakefields in the linac. 
-
-The bunch is accelerated in the first kilometer of the linac with a net phase of about -20 degrees. FACET uses a unique chirping scheme in the front end of the linac that staggers the RF chirp phase of over five linac sectors. The staggered chirp process is depicted in Figure~\ref{stag}. By accelerating on crest or nearly on crest in the first few sectors, the beam becomes stiff and is resistant to emittance dilution from transverse wakefields. The later sectors have stronger phasing, up to -55 degrees off crest, in order to achieve an average of -20 degrees chirp prior to the Sector 10 Chicane. While this scheme has the advantage of reducing emittance growth, it makes the beam more sensitive to phase errors in the highly chirped sectors.
 
 \begin{figure}[hb]
   \includegraphics[width=\columnwidth]{figures/chirp_plot.pdf}
@@ -242,30 +269,53 @@ The bunch is accelerated in the first kilometer of the linac with a net phase of
   \label{stag}
 \end{figure}
 
+The bunch is accelerated in the first kilometer of the linac with a net phase of about -20 degrees. FACET uses a unique chirping scheme in the front end of the linac that staggers the RF chirp phase over five linac sectors. The staggered chirp process is depicted in Figure~\ref{stag}. By accelerating on crest or nearly on crest in the first few sectors, the beam becomes stiff and is resistant to emittance dilution from transverse wakefields. The later sectors have stronger phasing, up to -55 degrees off crest, in order to achieve an average of -20 degrees chirp prior to the Sector 10 Chicane. While this scheme has the advantage of reducing emittance growth, it makes the beam more sensitive to phase errors in the highly chirped sectors.
+
 The bunch length is compressed from 1.2 mm to less than 100 $\mu$m in the Sector 10 chicane. The bunch is slightly over-compressed, with residual negative chirp.
 
 \subsection{Wakefield Chirping and Compression in the W-Chicane}\label{wakes}
 
-The high-charge electron bunch is extremely short compared to the RF wavelength after compression in the Sector 10. The bunch length is less than 0.5 s-band degrees, so it is impractical to use the RF to chirp the beam. On the other hand, the peak current for the electron bunch is over 4 kA and drives a large amplitude, longitudinal wakefield in the RF cavities. The wakefield is mostly linear over the length of the short bunch
+The high-charge electron bunch is extremely short compared to the RF wavelength after compression in the Sector 10 chicane. The bunch length is less than 0.5 s-band degrees, making it impractical to use the RF to simultaneously accelerate and chirp the beam. On the other hand, the peak current for the electron bunch is over 4 kA and drives a large amplitude, longitudinal wakefield in the RF cavities, which can be used to chirp the beam. The energy change of a particle at position $z$ in the bunch is given by
+\begin{equation}
+U_W = L \int_0^\infty \lambda(z-z')W(z')dz'
+\end{equation}
+where $L$ is the total length of RF cavities traversed by the beam, $\lambda(z)$ is the longitudinal charge distribution, and $W(z)$ is the single particle Green's function for the SLAC s-band cavity. The wake function comes from a numerical time domain simulation of the SLAC s-band cavity. In addition, analytical formulae were developed to estimate the average energy loss (wake loss) of the bunch as a function of bunch length. Both the numerical and analytical results have been benchmarked with experimental data~\cite{sup_short}\cite{novo}.
 
-Again, the bunch is over-compressed, this time with a residual high-to-low chirp. The very short (50 $\mu$m), very high charge (3.2 nC) bunch drives a high-amplitude longitudinal wakefield in the SLAC s-band cavities. The wakeloss function $W(z)$ is a convolution of the cavity wake structure and the bunch profile, but for very short bunches it is roughly linear over the core of the bunch. The net effect of the wakefields in the second kilometer of the linac is to provide a mostly linear high-to-low chirp that will be leveraged for bunch compression in the FACET W-Chicane.
+\begin{figure}[hb]
+  \includegraphics[width=\columnwidth]{figures/wakeloss.pdf}
+  \caption{The bunch profile and wake loss for the first and second kilometers of the FACET linac.}
+  \label{wake}
+\end{figure}
 
-The FACET W-Chicane is a unique lattice that features adjustable $R_{56}$.  When extremely short bunches are needed, the chicane is tuned to $R_{56} = 5$ mm and yields a gaussian bunch with $\sigma_z = 20~\mu$m. For the two-bunch setup, the $R_{56} = 10$ mm, which over-compresses the bunch with a residual low-to-high chirp. Table~\ref{dat_table} lists 
+The chirp applied to the bunch by a longitudinal wake is given by 
+%\begin{equation}
+%C_{W} = \sigma_z \left. \frac{d\Delta E_{W}}{dz} \right|_{z=0}
+%\end{equation}
+\begin{equation}
+C_{W} = \sigma \frac{U_{W}(\sigma) - U_{W}(-\sigma)}{2}.
+\end{equation}
+analogous to the RF phase chirp defined in Section~\ref{first}. Figure~\ref{wake} shows the energy loss due to beam induced wakefields, or wake loss, in the first and second kilometer of the FACET linac. For very short bunches, the wakefield is approximately linear across the core of the bunch, and is therefor an effective method for chirping the beam prior to final compression in the FACET W-Chicane.
+
+%Again, the bunch is over-compressed, this time with a residual high-to-low chirp. The very short (50 $\mu$m), very high charge (3.2 nC) bunch drives a high-amplitude longitudinal wakefield in the SLAC s-band cavities. The wakeloss function $W(z)$ is a convolution of the cavity wake structure and the bunch profile, but for very short bunches it is roughly linear over the core of the bunch. The net effect of the wakefields in the second kilometer of the linac is to provide a mostly linear high-to-low chirp that will be leveraged for bunch compression in the FACET W-Chicane.
+
+The FACET W-Chicane is a unique lattice that features adjustable $R_{56}$.  When extremely short bunches are needed, the chicane is tuned to $R_{56} = 5$ mm and yields a gaussian bunch with $\sigma_z = 20~\mu$m. For the two-bunch setup, the $R_{56} = 10$ mm, which over-compresses the bunch with a residual low-to-high chirp. 
+
+Table~\ref{dat_table} lists beamline parameters and chirp at different points in the linac.
 
 \begin{table}
-  \begin{tabular}{ l c c c}
+  \begin{tabular}{ l c c c c c c}
     \hline
-    Element & $R_{56}$ [mm] & $\phi_{rf}$ & $\sigma_z$ [$\mu$m] \\ \hline
-    NDR &  & & 6600 \\
-    NRTL Cavity &  & $ 90^o$ & 6600 \\
-    NRTL Chicane & 602.6 & & 500 \\
-    S02-10 &  & $-20^o$ & 500 \\
-    S10 Chicane & -75.8 & & 50 \\
-    S11-19 & & $0^o$ & 50 \\
-    W-Chicane & 5,10 & & 20,200 \\
+    Element & $R_{56} $[mm] & $\phi_{rf}$ & $\sigma_z$[$\mu$m] & $C_{z\delta}$ & $C_{RF}$ & $C_{W}$ \\ \hline
+    NDR &  & & 6600 & 0 & & \\
+    NRTL Cavity &  & $ 90^o$ & 6600 & -80 & -86.8 & -0.33 \\
+    NRTL Chicane & 602.6 & & 1200 & 14.05 &  & \\
+    S02-10 &  & $-20^o$ & 1200 & 172.63 & 228.6 & -77.95 \\
+    S10 Chicane & -75.8 & & 50 & -7.46 & & \\
+    S11-19 & & $0^o$ & 50 & -17.69 & -0.04 & -15.63 \\
+    W-Chicane & 5 & & 20 & 0.022 & & \\
     \hline
   \end{tabular}
-   \caption{Table of linac parameters and bunch lengths for each linac element. We quote the two $R_{56}$ values typically used in the W-Chicane.}
+   \caption{Table of linac parameters and bunch lengths for each linac element. $C_{z\delta}$, $C_{RF}$, and$C_{W}$ are all measured in MeV$\cdot$mm.}
    \label{dat_table}
 \end{table}
 
@@ -325,14 +375,12 @@ There is an arrival time jitter of the beam relative to the RF phase of the TCAV
   \label{ps}
 \end{figure}
 
-
+\section{Comparison with Simulation}
+The reconstructed phase space was compared to LiTrack simulations to determine the machine parameters that produced the bunch. We find that the bunch length in the NDR, the NRTL compressor cavity voltage, and the phase in Sectors 2-10 all had to be adjusted away from their readback values in order to make a meaningful comparison.
 
 
 \section{Conclusions and Future Work} \label{sec:con}
-
-
-xxxxxxxxx
-
+Longitudinal phase space reconstruction is a critical tool for beam tuning and understanding the results of ongoing experiments at FACET
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -344,7 +392,19 @@ xxxxxxxxx
 
 \bibitem{mjh_facet} M. J. Hogan et al., New J. Phys. 12, 055030 (2010).
 
+\bibitem{pe_spps} M. Cornacchia et al., SLAC-PUB-8950.
+
+\bibitem{litrack} P. Emma and K. Bane, SLAC-PUB-11035.
+
 \bibitem{Holtzapple} R. Holtzapple, Ph.D. Thesis, Stanford University (1996).
+
+\bibitem{holtz_ring} R. Holtzapple et al., SLAC-PUB-6834.
+
+\bibitem{fj_over} F.J. Decker et al., SLAC-PUB-6604.
+
+\bibitem{sup_short} K. Bane et al., SLAC-PUB-9905.
+
+\bibitem{novo} A. Novokhatski, NIM A (2012).
 
 \end{thebibliography}
 
